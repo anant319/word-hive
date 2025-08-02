@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Word Hive - Your Digital Book Marketplace</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- Header -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-bold text-orange-600">
+                Word Hive
+            </a>
+            <div class="hidden md:flex items-center space-x-6">
+                <a href="index.html" class="text-gray-600 hover:text-orange-600 transition duration-300">Home</a>
+                <a href="browse.html" class="text-gray-600 hover:text-orange-600 transition duration-300">Browse</a>
+                <a href="features.html" class="text-gray-600 hover:text-orange-600 transition duration-300">Features</a>
+                <a href="about.html" class="text-gray-600 hover:text-orange-600 transition duration-300">About</a>
+                <a href="contact.html" class="text-gray-600 hover:text-orange-600 transition duration-300">Contact</a>
+                <a href="cart.html" class="text-gray-600 hover:text-orange-600 transition duration-300">Cart</a>
+                <a href="admin.html" class="text-gray-600 hover:text-orange-600 transition duration-300">Admin</a>
+            </div>
+            <button id="mobile-menu-button" class="md:hidden text-gray-600 focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            </button>
+        </nav>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden px-6 pt-2 pb-4 space-y-2">
+            <a href="index.html" class="block text-gray-600 hover:text-orange-600 transition duration-300">Home</a>
+            <a href="browse.html" class="block text-gray-600 hover:text-orange-600 transition duration-300">Browse</a>
+            <a href="features.html" class="block text-gray-600 hover:text-orange-600 transition duration-300">Features</a>
+            <a href="about.html" class="block text-gray-600 hover:text-orange-600 transition duration-300">About</a>
+            <a href="contact.html" class="block text-gray-600 hover:text-orange-600 transition duration-300">Contact</a>
+            <a href="cart.html" class="block text-gray-600 hover:text-orange-600 transition duration-300">Cart</a>
+            <a href="admin.html" class="block text-gray-600 hover:text-orange-600 transition duration-300">Admin</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="hero-bg text-white">
+            <div class="container mx-auto px-6 py-32 text-center">
+                <h1 class="text-4xl md:text-6xl font-bold leading-tight mb-4">Discover Your Next Great Read</h1>
+                <p class="text-lg md:text-xl mb-8 max-w-3xl mx-auto">Word Hive is your personal digital library, offering a streamlined marketplace to connect readers and authors from across the globe.</p>
+                <a href="browse.html" class="bg-orange-500 text-white font-bold py-3 px-8 rounded-full text-lg hover:bg-orange-600 transition duration-300">Start Exploring</a>
+            </div>
+        </section>
+
+        <!-- AI Book Idea Generator Section -->
+        <section id="generator" class="bg-orange-50 py-20">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-3xl font-bold mb-4">Need Inspiration?</h2>
+                <p class="text-gray-600 mb-8 max-w-2xl mx-auto">Stuck on your next story? Let our AI, powered by Gemini, spark your creativity. Enter a genre and get a unique book idea instantly.</p>
+                <div class="max-w-xl mx-auto">
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <input type="text" id="genre-input" placeholder="E.g., Sci-Fi, Fantasy Romance, Mystery" class="flex-grow px-4 py-3 rounded-lg border-2 border-gray-300 focus:outline-none focus:border-orange-500 transition">
+                        <button id="generate-idea-btn" class="bg-orange-500 text-white font-bold py-3 px-6 rounded-lg hover:bg-orange-600 transition duration-300 flex items-center justify-center">
+                            <span class="mr-2">✨ Generate Book Idea</span>
+                        </button>
+                    </div>
+                </div>
+                <div id="loading-spinner" class="mt-8 hidden">
+                    <div class="loader"></div>
+                    <p class="text-gray-600 mt-2">Generating your next masterpiece...</p>
+                </div>
+                <div id="idea-result" class="mt-8 p-8 bg-white rounded-lg shadow-lg text-left hidden">
+                    <!-- Generated idea will appear here -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white">
+        <div class="container mx-auto px-6 py-12">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Word Hive</h3>
+                    <p class="text-gray-400">Connecting and empowering readers and authors globally.</p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Quick Links</h3>
+                    <ul>
+                        <li class="mb-2"><a href="index.html" class="text-gray-400 hover:text-white">Home</a></li>
+                        <li class="mb-2"><a href="browse.html" class="text-gray-400 hover:text-white">Browse</a></li>
+                        <li class="mb-2"><a href="features.html" class="text-gray-400 hover:text-white">Features</a></li>
+                        <li class="mb-2"><a href="about.html" class="text-gray-400 hover:text-white">About Us</a></li>
+                        <li class="mb-2"><a href="contact.html" class="text-gray-400 hover:text-white">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Connect With Us</h3>
+                    <p class="text-gray-400 mb-4">contact@wordhive.com</p>
+                    <div class="flex space-x-4">
+                        <!-- Social media icons -->
+                    </div>
+                </div>
+            </div>
+            <div class="mt-12 border-t border-gray-700 pt-8 text-center text-gray-400">
+                <p>&copy; 2025 Word Hive. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Error Modal -->
+    <div id="error-modal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden">
+        <div class="bg-white p-8 rounded-lg shadow-2xl max-w-sm w-full text-center">
+            <h3 class="text-2xl font-bold text-red-600 mb-4">Oops!</h3>
+            <p id="error-message" class="text-gray-700 mb-6">Something went wrong.</p>
+            <button id="close-modal-btn" class="bg-red-500 text-white font-bold py-2 px-6 rounded-lg hover:bg-red-600 transition duration-300">Close</button>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script src="js/generator.js"></script>
+</body>
+</html>
